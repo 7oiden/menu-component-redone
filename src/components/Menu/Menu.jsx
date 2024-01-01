@@ -1,10 +1,13 @@
 import PropTypes from "prop-types";
+import Toggle from "../Toggle/index";
 
 export default function Menu({ children }) {
   return (
-    <div className="menu" role="menu">
-      {children}
-    </div>
+    <Toggle>
+      <div className="menu" role="menu">
+        {children}
+      </div>
+    </Toggle>
   );
 }
 
