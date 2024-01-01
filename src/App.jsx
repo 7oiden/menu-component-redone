@@ -1,9 +1,12 @@
 import "./App.css";
 import Menu from "./components/Menu/index";
+import Star from "./components/Star";
 
 function App() {
   return (
-    <Menu>
+    <>
+    <Star />
+      <Menu>
         <Menu.Button>Menu</Menu.Button>
         <Menu.Dropdown>
           <Menu.Item>Home</Menu.Item>
@@ -11,7 +14,8 @@ function App() {
           <Menu.Item>Contact</Menu.Item>
           <Menu.Item>Blog</Menu.Item>
         </Menu.Dropdown>
-    </Menu>
+      </Menu>
+    </>
   );
 }
 
