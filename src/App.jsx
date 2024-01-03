@@ -1,10 +1,25 @@
 import "./App.css";
 import Menu from "./components/Menu/index";
 import Star from "./components/Star";
+import Toggle from "./components/Toggle/index";
 
 function App() {
   return (
     <>
+      <Toggle
+        onToggle={() => {
+          console.log("Toggled");
+        }}
+      >
+        <Toggle.Button>
+          <Toggle.Display>
+            {(on) => {
+              return <div className={`box ${on ? "filled" : ""}`}></div>;
+            }}
+          </Toggle.Display>
+        </Toggle.Button>
+      </Toggle>
+
       <Star onChange={() => {}} />
 
       <Menu onOpen={() => console.log("Menu toggled")}>
