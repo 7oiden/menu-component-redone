@@ -1,9 +1,11 @@
 import Toggle from "./Toggle/index";
 import { BsStar, BsStarFill } from "react-icons/bs";
+import PropTypes from "prop-types";
 
-export default function Star() {
+export default function Star({onChange}) {
+ 
   return (
-    <Toggle>
+    <Toggle onToggle={onChange}>
       <Toggle.Button>
         <Toggle.On>
           <BsStarFill className="star filled" />
@@ -15,3 +17,7 @@ export default function Star() {
     </Toggle>
   );
 }
+
+Star.propTypes = {
+  onChange: PropTypes.func.isRequired,
+};

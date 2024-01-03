@@ -5,8 +5,9 @@ import Star from "./components/Star";
 function App() {
   return (
     <>
-    <Star />
-      <Menu>
+      <Star onChange={() => {}} />
+
+      <Menu onOpen={() => console.log("Menu toggled")}>
         <Menu.Button>Menu</Menu.Button>
         <Menu.Dropdown>
           <Menu.Item>Home</Menu.Item>
