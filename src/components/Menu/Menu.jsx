@@ -22,5 +22,5 @@ export default function Menu({ children, onOpen }) {
 
 Menu.propTypes = {
   children: PropTypes.node.isRequired,
-  onOpen: PropTypes.func.isRequired,
+  onOpen: PropTypes.func,
 };

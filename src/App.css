@@ -12,6 +12,13 @@ body {
     margin-top: 40px;
 }
 
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+}
+
 button {
     background-color: #E5E7EB;
     color: #4B5563;
@@ -96,13 +103,13 @@ button.button-danger {
 }
 
 .star {
+    display: block;
     height: 30px;
     width: 30px;
     cursor: pointer;
     transition: color .5s ease-in-out;
     user-select: none;
     color: white;
-    margin-bottom: 2rem;
 }
 
 .star.filled {
@@ -116,7 +123,6 @@ button.button-danger {
     cursor: pointer;
     background-color: white;
     transition: background-color .3s ease-in-out;
-    margin-bottom: 2rem;
 }
 
 .box.filled {
