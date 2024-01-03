@@ -1,11 +1,18 @@
-import { useState } from 'react';
+import { useState } from "react";
+import useEffectOnUpdate from "./useEffectOnUpdate";
 
-export default function useToggle() {
-    const [on, setOn] = useState(false);
+//sets a "noop" function as default value for onToggle
+export default function useToggle({
+  initialValue = false,
+  onToggle = () => {},
+}) {
+  const [on, setOn] = useState(initialValue);
 
-    function toggle() {
-      setOn((prevOn) => !prevOn);
-    }
+  function toggle() {
+    setOn((prevOn) => !prevOn);
+  }
 
-    return [on, toggle];
+  useEffectOnUpdate(onToggle, [on]);
+
+  return [on, toggle];
 }

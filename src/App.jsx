@@ -19,7 +19,7 @@ function App() {
         </Toggle.Button>
       </Toggle> */}
 
-      {/* <Star onChange={() => {}} /> */}
+      <Star onChange={() => {}} />
 
       <Menu onOpen={() => console.log("Menu toggled")}>
         <Menu.Button>Menu</Menu.Button>

@@ -6,7 +6,10 @@ const MenuContext = createContext();
 export { MenuContext };
 
 export default function Menu({ children, onOpen }) {
-  const [open, toggleOpen] = useToggle();
+   const [open, toggleOpen] = useToggle({
+     initialValue: true,
+     onToggle: onOpen,
+   });
 
   return (
     <MenuContext.Provider value={{ open, toggleOpen }}>
@@ -16,8 +19,6 @@ export default function Menu({ children, onOpen }) {
     </MenuContext.Provider>
   );
 }
-
-
 
 Menu.propTypes = {
   children: PropTypes.node.isRequired,

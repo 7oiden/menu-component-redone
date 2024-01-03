@@ -19,5 +19,4 @@ export default function MenuDropdown({ children }) {
 
 MenuDropdown.propTypes = {
   children: PropTypes.node.isRequired,
-  open: PropTypes.node.isRequired,
 };
