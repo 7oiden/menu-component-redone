@@ -1,7 +1,6 @@
 import "./App.css";
 import Menu from "./components/Menu/index";
 import Star from "./components/Star";
-import Toggle from "./components/Toggle/index";
 
 function App() {
   return (

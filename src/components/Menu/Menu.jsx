@@ -1,15 +1,23 @@
 import PropTypes from "prop-types";
-import Toggle from "../Toggle/index";
+import useToggle from "../../hooks/useToggle";
+import { createContext } from "react";
+
+const MenuContext = createContext();
+export { MenuContext };
 
 export default function Menu({ children, onOpen }) {
+  const [open, toggleOpen] = useToggle();
+
   return (
-    <Toggle onToggle={onOpen}>
+    <MenuContext.Provider value={{ open, toggleOpen }}>
       <div className="menu" role="menu">
         {children}
       </div>
-    </Toggle>
+    </MenuContext.Provider>
   );
 }
+
+
 
 Menu.propTypes = {
   children: PropTypes.node.isRequired,

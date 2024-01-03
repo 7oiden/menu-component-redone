@@ -1,12 +1,15 @@
 import Button from "../Button/Button";
 import PropTypes from "prop-types";
-import Toggle from "../Toggle/index";
+import { MenuContext } from "./Menu";
+import { useContext } from "react";
 
 export default function MenuButton({ children }) {
+  const { toggleOpen } = useContext(MenuContext);
+
   return (
-    <Toggle.Button>
-      <Button size="lg">{children}</Button>
-    </Toggle.Button>
+    <Button onClick={toggleOpen} size="lg">
+      {children}
+    </Button>
   );
 }
 

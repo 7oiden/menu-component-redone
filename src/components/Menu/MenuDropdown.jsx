@@ -1,16 +1,23 @@
 import PropTypes from "prop-types";
-import Toggle from "../Toggle/index";
+import { MenuContext } from "./Menu";
+import { useContext } from 'react';
 
-export default function MenuButton({ children }) {
+export default function MenuDropdown({ children }) {
+
+  const { open } = useContext(MenuContext);
+
   return (
-    <Toggle.On>
-      <div className="menu-dropdown" role="menu">
-        {children}
-      </div>
-    </Toggle.On>
+    <>
+      {open ? (
+        <div className="menu-dropdown" role="menu">
+          {children}
+        </div>
+      ) : null}
+    </>
   );
 }
 
-MenuButton.propTypes = {
+MenuDropdown.propTypes = {
   children: PropTypes.node.isRequired,
+  open: PropTypes.node.isRequired,
 };
