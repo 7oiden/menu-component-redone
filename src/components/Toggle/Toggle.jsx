@@ -1,16 +1,12 @@
-import { useState, createContext } from "react";
+import { createContext } from "react";
+import useToggle from "../../hooks/useToggle";
 import useEffectOnUpdate from "../../hooks/useEffectOnUpdate";
 import PropTypes from "prop-types";
 
 const ToggleContext = createContext();
 
 export default function Toggle({ children, onToggle = () => {} }) {
-  const [on, setOn] = useState(false);
-
-  function toggle() {
-    setOn((prevOn) => !prevOn);
-  }
-  // console.log(firstRender.current);
+  const [on, toggle] = useToggle();
 
  useEffectOnUpdate(onToggle, [on]);
 

@@ -6,7 +6,7 @@ import Toggle from "./components/Toggle/index";
 function App() {
   return (
     <>
-      <Toggle
+      {/* <Toggle
         onToggle={() => {
           console.log("Toggled");
         }}
@@ -18,9 +18,9 @@ function App() {
             }}
           </Toggle.Display>
         </Toggle.Button>
-      </Toggle>
+      </Toggle> */}
 
-      <Star onChange={() => {}} />
+      {/* <Star onChange={() => {}} /> */}
 
       <Menu onOpen={() => console.log("Menu toggled")}>
         <Menu.Button>Menu</Menu.Button>
